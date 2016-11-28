@@ -4,3 +4,10 @@
 /.idea
 Homestead.json
 Homestead.yaml
+
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
