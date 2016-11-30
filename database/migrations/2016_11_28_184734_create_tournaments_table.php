@@ -18,6 +18,7 @@ class CreateTournamentsTable extends Migration
             $table->string('name');
             $table->timestamp('start');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

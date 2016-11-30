@@ -11,10 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'IndexController@index');
+
+
+// Authentication Routes...
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout');
+
+// Registration Routes...
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('/register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/tournaments', 'TournamentController@index');
+    Route::get('/tournament/edit/{tournament?}', 'TournamentController@edit');
+    Route::post('/tournament/edit/{tournament?}', 'TournamentController@updateInsert');
+    Route::get('/tournament/delete/{tournament?}', 'TournamentController@delete');
+
+    Route::get('/teams', 'TeamController@index');
+    Route::get('/team/edit/{tournament?}', 'TeamController@edit');
+    Route::post('/team/edit/{tournament?}', 'TeamController@updateInsert');
+    Route::get('/team/delete/{tournament?}', 'TeamController@delete');
+
+
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');

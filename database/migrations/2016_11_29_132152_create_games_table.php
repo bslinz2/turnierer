@@ -19,6 +19,7 @@ class CreateGamesTable extends Migration
             $table->integer('team_id');
             $table->integer('vs_team_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -18,6 +18,7 @@ class CreateGroupsTable extends Migration
             $table->string('name');
             $table->integer('tournament_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
