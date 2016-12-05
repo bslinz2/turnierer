@@ -13,10 +13,16 @@ class Tournament extends Model
         'created_at',
         'updated_at',
         'deleted_at',
-        'start'
+        'start_date'
     ];
 
-    protected $fillable = ['name', 'start'];
+    protected $fillable = [
+        'name',
+        'start_date',
+        'point_win',
+        'point_draw',
+        'point_lose',
+    ];
 
     public function groups()
     {

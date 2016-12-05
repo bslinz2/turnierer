@@ -2,26 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Tournament;
 use App\Models\Group;
 
-class TournamentController extends Controller
+class GroupController extends Controller
 {
-    public function index() {
-        $tournaments = Tournament::orderBy('id', 'DESC')->get();
-        return View('tournament.index', ['tournaments' => $tournaments]);
-    }
 
-    public function edit(Tournament $tournament = null) {
-        return View('tournament.edit', ['tournament' => $tournament]);
+    public function edit(Tournament $tournament, Group $group = null) {
+        return View('group.edit', ['tournament' => $tournament, 'group' => $group]);
     }
 
     public function updateInsert(Tournament $tournament = null) {
         $this->validate(request(), [
             'name' => 'required|max:255',
-            'start_date' => 'required|date',
+            'start' => 'required|date',
             'point_win' => 'required|integer',
             'point_draw' => 'required|integer',
             'point_lose' => 'required|integer',
@@ -47,3 +41,4 @@ class TournamentController extends Controller
         return View('tournament.detail', ['tournament' => $tournament, 'groups' => $groups]);
     }
 }
+

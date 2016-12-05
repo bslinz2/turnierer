@@ -14,15 +14,21 @@
                 <th>updated at</th>
                 <th></th>
                 <th></th>
+                <th></th>
                 </thead>
                 <tbody>
                 @foreach($tournaments as $tournament)
                     <tr>
                         <td>{{ $tournament->id }}</td>
                         <td>{{ $tournament->name }}</td>
-                        <td>{{ $tournament->start }}</td>
+                        <td>{{ $tournament->start_date }}</td>
                         <td>{{ $tournament->created_at }}</td>
                         <td>{{ $tournament->updated_at }}</td>
+                        <td>
+                            <a href="/tournament/detail/{{ $tournament->id }}" class="btn btn-success" role="button">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            </a>
+                        </td>
                         <td>
                             <a href="/tournament/edit/{{ $tournament->id }}" class="btn btn-info" role="button">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

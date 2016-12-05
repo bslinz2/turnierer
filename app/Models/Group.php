@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     protected $dates = [
-        'deleted_at'
+        'deleted_at',
+        'start_date'
     ];
+
+    protected $fillable = ['name', 'start_date'];
 
     public function tournament()
     {

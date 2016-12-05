@@ -8,11 +8,12 @@ use App\Models\Team;
 class TeamController extends Controller
 {
     public function index() {
-        $tournaments = Team::orderBy('id', 'DESC')->get();
-        return View('team.index', ['teams' => $tournaments]);
+        $teams = Team::orderBy('id', 'DESC')->get();
+        return View('team.index', ['teams' => $teams]);
     }
 
     public function edit(Team $team = null) {
+
         return View('team.edit', ['team' => $team]);
     }
 
