@@ -44,7 +44,10 @@
                 <input type="text" autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $team->name : '' }}">
             </div>
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-success">
+                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                Speichern
+            </button>
         </form>
 
 

@@ -18,6 +18,8 @@ class CreateGamesTable extends Migration
             $table->integer('group_id');
             $table->integer('team_id');
             $table->integer('vs_team_id');
+            $table->integer('team_result');
+            $table->integer('vs_team_result');
             $table->timestamps();
             $table->softDeletes();
         });

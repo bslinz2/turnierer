@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tournament;
 use App\Models\Group;
 use App\Models\Team;
+use App\Models\Game;
 
 class GroupController extends Controller
 {
@@ -50,10 +51,13 @@ class GroupController extends Controller
         return View('group.detail', [
             'group' => $group,
             'addAbleTeams' => $this->allAddAbleTeams($group),
+            'teamSizes' => Game::teamSizes(),
+            'teamSchema' => Game::teamSchema(count($group->teams)),
         ]);
     }
 
     public function delete(Group $group) {
+        $group->teams()->detach();
         $group->delete();
         return redirect()->back();
     }
@@ -92,8 +96,8 @@ class GroupController extends Controller
             if(!$found) {
                 $addAbleTeams->push($allTeam);
             }
+            $found = false;
         }
         return $addAbleTeams;
     }
 }
-

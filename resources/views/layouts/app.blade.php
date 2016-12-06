@@ -44,7 +44,8 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/tournaments">Turniere</a></li>
+                        <li><a href="/teams">Teams</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -82,6 +83,8 @@
         </nav>
 
         @yield('content')
+
+        <br /><br />
     </div>
 
     <!-- Scripts -->

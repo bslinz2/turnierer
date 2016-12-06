@@ -77,7 +77,7 @@
                         <td>{{ $group->created_at }}</td>
                         <td>{{ count($group->teams) }}</td>
                         <td>
-                            <a href="/group/detail/{{ $group->id }}" class="btn btn-success" role="button">
+                            <a href="/group/detail/{{ $group->id }}" class="btn btn-default" role="button">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                             </a>
                         </td>

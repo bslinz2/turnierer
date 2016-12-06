@@ -33,7 +33,7 @@
                         <td>{{ $tournament->created_at }}</td>
                         <td>{{ count($tournament->groups) }}</td>
                         <td>
-                            <a href="/tournament/detail/{{ $tournament->id }}" class="btn btn-success" role="button">
+                            <a href="/tournament/detail/{{ $tournament->id }}" class="btn btn-default" role="button">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                             </a>
                         </td>

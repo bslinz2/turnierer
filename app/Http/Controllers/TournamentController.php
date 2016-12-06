@@ -43,7 +43,9 @@ class TournamentController extends Controller
     }
 
     public function detail(Tournament $tournament) {
-        $groups = Group::where('tournament_id', '=', $tournament->id)->get();
+        $groups = Group::where('tournament_id', '=', $tournament->id)
+            ->orderBy('name', 'ASC')
+            ->get();
         return View('tournament.detail', ['tournament' => $tournament, 'groups' => $groups]);
     }
 }

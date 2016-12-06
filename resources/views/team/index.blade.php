@@ -16,9 +16,8 @@
             <table class="table">
                 <thead>
                     <th>id</th>
-                    <th>name</th>
-                    <th>created at</th>
-                    <th>updated at</th>
+                    <th>Name</th>
+                    <th>Erstelldatum</th>
                     <th></th>
                     <th></th>
                 </thead>
@@ -27,7 +26,6 @@
                     <tr>
                         <td>{{ $team->id }}</td>
                         <td>{{ $team->name }}</td>
-                        <td>{{ $team->created_at }}</td>
                         <td>{{ $team->updated_at }}</td>
                         <td>
                             <a href="/team/edit/{{ $team->id }}" class="btn btn-info" role="button">

@@ -46,6 +46,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/group/{group}/add-team/{team}', 'GroupController@addTeam');
     Route::get('/group/{group}/remove-team/{team}', 'GroupController@removeTeam');
 
+    Route::get('/game/group/{group}/team/{team}/vs-team/{vsTeam}/team-result/{teamResult}/vs-team-result/{vsTeamResult}', 'GameController@edit');
+
     Route::get('/teams', 'TeamController@index');
     Route::get('/team/edit/{team?}', 'TeamController@edit');
     Route::post('/team/edit/{team?}', 'TeamController@updateInsert');
