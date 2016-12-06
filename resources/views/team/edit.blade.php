@@ -4,13 +4,27 @@
     <div class="container">
         <? $exists = $team->id == null ? false : true; ?>
 
-        <h1>
-            @if($exists)
-                Team bearbeiten (id: {{ $team->id }})
-            @else
-                Neues Team erstellen
-            @endif
-        </h1>
+        <div class="page-header">
+            <h1>
+                @if($exists)
+                    Team bearbeiten
+                @else
+                    Neues Team erstellen
+                @endif
+            </h1>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li class="active">
+                @if($exists)
+                    Bearbeiten (id: {{ $team->id }})
+                @else
+                    Erstellen
+                @endif
+            </li>
+        </ol>
 
         @if (count($errors) > 0)
             <div class="alert alert-danger">
@@ -27,7 +41,7 @@
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $team->name : '' }}">
+                <input type="text" autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $team->name : '' }}">
             </div>
 
             <button type="submit" class="btn btn-default">Submit</button>

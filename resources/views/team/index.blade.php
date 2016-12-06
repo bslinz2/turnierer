@@ -2,17 +2,25 @@
 
 @section('content')
     <div class="container">
-        <h1>Teams</h1>
+
+        <div class="page-header">
+            <h1>Teams</h1>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li  class="active">Teams</li>
+        </ol>
 
         @if(count($teams) > 0)
             <table class="table">
                 <thead>
-                <th>id</th>
-                <th>name</th>
-                <th>created at</th>
-                <th>updated at</th>
-                <th></th>
-                <th></th>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>created at</th>
+                    <th>updated at</th>
+                    <th></th>
+                    <th></th>
                 </thead>
                 <tbody>
                 @foreach($teams as $team)
@@ -43,7 +51,10 @@
             </div>
         @endif
 
-        <a href="/team/edit/" class="btn btn-success" role="button">Neues Team anlegen</a>
+        <a href="/team/edit/" class="btn btn-success" role="button">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Neues Team anlegen
+        </a>
 
     </div>
 @endsection

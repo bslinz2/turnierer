@@ -2,15 +2,15 @@
 
 @section('content')
     <div class="container">
-        <? $exists = $tournament->id == null ? false : true; ?>
+        <? $exists = $group->id == null ? false : true; ?>
 
 
 
         <h1>
             @if($exists)
-                Turnier bearbeiten (id: {{ $tournament->id }})
+                Gruppe bearbeiten (id: {{ $group->id }})
             @else
-                Neues Turnier erstellen
+                Gruppe Turnier erstellen
             @endif
         </h1>
 
@@ -24,31 +24,16 @@
             </div>
         @endif
 
-        <form method="POST" action="/tournament/edit/{{ $exists ? $tournament->id : '' }}">
+        <form method="POST" action="/tournament/{{ $tournament->id }}/group/edit/{{ $exists ? $group->id : '' }}">
             {{ csrf_field() }}
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $tournament->name : '' }}">
+                <input type="text" autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $group->name : old('name') }}">
             </div>
             <div class="form-group">
                 <label for="start_date">Start Date</label>
-                <input type="text" class="form-control" name="start_date" id="start_date" placeholder="YYYY-MM-DD HH:MM:SS ({{ Carbon\Carbon::now() }})" value="{{ $exists ? $tournament->start_date : Carbon\Carbon::now() }}">
-            </div>
-
-            <div class="form-group">
-                <label for="point_win">Punkte für Gewinner</label>
-                <input type="text" class="form-control" name="point_win" id="point_win"  value="{{ $exists && !old('point_win') ? $tournament->point_win : old('point_win') }}">
-            </div>
-
-            <div class="form-group">
-                <label for="point_draw">Punkte für Unentschieden</label>
-                <input type="text" class="form-control" name="point_draw" id="point_draw"  value="{{ $exists && !old('point_draw') ? $tournament->point_draw : old('point_draw') }}">
-            </div>
-
-            <div class="form-group">
-                <label for="point_lose">Punkte für Verlierer</label>
-                <input type="text" class="form-control" name="point_lose" id="point_lose"  value="{{ $exists && !old('point_lose')? $tournament->point_lose : old('point_lose') }}">
+                <input type="text" class="form-control" name="start_date" id="start_date" placeholder="YYYY-MM-DD HH:MM:SS ({{ Carbon\Carbon::now() }})" value="{{ $exists ? $group->start_date : Carbon\Carbon::now() }}">
             </div>
 
             <button type="submit" class="btn btn-default">Submit</button>
