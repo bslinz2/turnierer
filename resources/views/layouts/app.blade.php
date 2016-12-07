@@ -44,8 +44,8 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="/tournaments">Turniere</a></li>
-                        <li><a href="/teams">Teams</a></li>
+                        <li class="{{ Request::is('tournaments') ? 'active' : '' }}"><a href="/tournaments">Turniere</a></li>
+                        <li class="{{ Request::is('teams') ? 'active' : '' }}"><a href="/teams">Teams</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
