@@ -1,4 +1,4 @@
-# Turnierer
+# Turnierer - Turniere einfach managen. 
 
 ## Installation
 
