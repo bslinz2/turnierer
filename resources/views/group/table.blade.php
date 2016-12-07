@@ -9,10 +9,8 @@
     <table class="table">
         <thead>
             <th>Rang</th>
-            <th>Punkte</th>
             <th>Team</th>
-            <th>Beginn</th>
-            <th>Ende</th>
+            <th>Punkte</th>
         </thead>
         <tbody>
         <?  $teams = $group->teams;
@@ -40,10 +38,10 @@
 
                 </td>
                 <td>
-                    {{ $team->points }}
+                    {{ $team->name }}
                 </td>
                 <td>
-                    {{ $team->name }}
+                    {{ $team->points }}
                 </td>
             </tr>
         @endforeach

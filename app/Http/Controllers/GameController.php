@@ -9,7 +9,7 @@ use App\Models\Game;
 
 class GameController extends Controller {
 
-    public function edit(Group $group, Team $team, Team $vsTeam, $teamResult, $vsTeamResult) {
+    public function edit(Group $group, Team $team, Team $vsTeam, $teamResult, $vsTeamResult, $startOffset) {
         $games = Game::where('group_id', $group->id)
             ->where('team_id', $team->id)
             ->where('vs_team_id', $vsTeam->id)
@@ -26,8 +26,9 @@ class GameController extends Controller {
         $game->group_id = $group->id;
         $game->team_result = (int) $teamResult;
         $game->vs_team_result = (int) $vsTeamResult;
+        $game->start_offset = $startOffset;
         $game->save();
-        
+
         return redirect('/group/detail/' . $group->id);
     }
 }

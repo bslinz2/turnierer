@@ -25,6 +25,10 @@ class Game extends Model
         ]
     ];
 
+    protected $fillable = [
+        'start_offset',
+    ];
+
     protected $dates = [
         'deleted_at'
     ];
