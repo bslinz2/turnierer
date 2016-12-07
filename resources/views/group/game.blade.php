@@ -46,14 +46,14 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="name">{{ $team->name }}</label>
-                                    <input class="form-control" type="number" required name="team-result" value="{{ $currentGame ? $currentGame->team_result : '' }}"/>
+                                    <input class="form-control" type="number" name="team-result" value="{{ $currentGame ? $currentGame->team_result : '' }}"/>
                                 </div>
                             </div>
                             <div class="col-md-1">:</div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="name">{{ $vsTeam->name }}</label>
-                                    <input class="form-control" type="number" required name="vs-team-result" value="{{ $currentGame ? $currentGame->vs_team_result : '' }}" />
+                                    <input class="form-control" type="number" name="vs-team-result" value="{{ $currentGame ? $currentGame->vs_team_result : '' }}" />
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -101,8 +101,8 @@
             var url = '/game/group/' + $gameForm.querySelector('[name=group_id]').value
                     + '/team/' + $gameForm.querySelector('[name=team]').value
                     + '/vs-team/' + $gameForm.querySelector('[name=vs-team]').value
-                    + '/team-result/' + $gameForm.querySelector('[name=team-result]').value
-                    + '/vs-team-result/' + $gameForm.querySelector('[name=vs-team-result]').value
+                    + '/team-result/' + ($gameForm.querySelector('[name=team-result]').value ? $gameForm.querySelector('[name=team-result]').value : '-')
+                    + '/vs-team-result/' + ($gameForm.querySelector('[name=vs-team-result]').value ?$gameForm.querySelector('[name=vs-team-result]').value : '-')
                     + '/start-offset/' + $gameForm.querySelector('[name=start_offset]').value
             $gameForm.setAttribute('action', url);
         });

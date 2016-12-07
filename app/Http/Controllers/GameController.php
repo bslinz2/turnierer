@@ -24,8 +24,19 @@ class GameController extends Controller {
         }
 
         $game->group_id = $group->id;
-        $game->team_result = (int) $teamResult;
-        $game->vs_team_result = (int) $vsTeamResult;
+        
+        if($teamResult != '-') {
+            $game->team_result = (int) $teamResult;
+        } else {
+            $game->team_result = null;
+        }
+
+        if($vsTeamResult != '-') {
+            $game->vs_team_result = (int) $vsTeamResult;
+        } else {
+            $game->vs_team_result = null;
+        }
+
         $game->start_offset = $startOffset;
         $game->save();
 

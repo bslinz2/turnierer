@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     public $points = 0;
+    public $goalsShot = 0;
+    public $goalsGot = 0;
 
     // schemas for groups with 3 and 4 teams, http://neu.hessen-volley.de/filerepository/CxNu63XgYercbu6kUvub.pdf
     protected static $schemas = [
@@ -70,5 +72,10 @@ class Game extends Model
             $this->team->points = $this->group->tournament->point_lose;
             $this->vsTeam->points = $this->group->tournament->point_win;
         }
+        $this->team->goalsGot = $this->vs_team_result;
+        $this->vsTeam->goalsGot = $this->team_result;
+
+        $this->team->goalsShot = $this->team_result;
+        $this->vsTeam->goalsShot = $this->vs_team_result;
     }
 }
