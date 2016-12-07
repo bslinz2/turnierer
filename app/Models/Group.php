@@ -22,4 +22,8 @@ class Group extends Model
     {
         return $this->belongsToMany('App\Models\Team');
     }
+
+    public function games() {
+        return $this->hasMany('App\Models\Game');
+    }
 }

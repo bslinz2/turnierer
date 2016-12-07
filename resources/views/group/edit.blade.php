@@ -44,13 +44,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $group->name : old('name') }}">
+                        <input type="text" required autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $group->name : old('name') }}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="start_date">Start Date</label>
-                        <input type="text" class="form-control" name="start_date" id="start_date" placeholder="YYYY-MM-DD HH:MM:SS ({{ Carbon\Carbon::now() }})" value="{{ $exists ? $group->start_date : Carbon\Carbon::now() }}">
+                        <input type="text" required class="form-control" name="start_date" id="start_date" placeholder="YYYY-MM-DD HH:MM:SS ({{ Carbon\Carbon::now() }})" value="{{ $exists ? $group->start_date : Carbon\Carbon::now() }}">
                     </div>
                 </div>
             </div>

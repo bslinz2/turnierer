@@ -22,6 +22,8 @@ class Tournament extends Model
         'point_win',
         'point_draw',
         'point_lose',
+        'game_duration',
+        'break_duration',
     ];
 
     public function groups()

@@ -20,6 +20,8 @@ class CreateTournamentsTable extends Migration
             $table->integer('point_win');
             $table->integer('point_draw');
             $table->integer('point_lose');
+            $table->integer('game_duration');
+            $table->integer('break_duration');
             $table->timestamps();
             $table->softDeletes();
         });

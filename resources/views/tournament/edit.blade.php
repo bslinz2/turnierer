@@ -55,22 +55,37 @@
             </div>
 
             <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="break_duration">Pausenzeit in Minuten</label>
+                        <input type="text" required class="form-control" name="break_duration" id="break_duration"  value="{{ $exists && !old('break_duration')? $tournament->break_duration : old('break_duration') }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="game_duration">Spielzeit in Minuten</label>
+                        <input type="text" required class="form-control" name="game_duration" id="game_duration"  value="{{ $exists && !old('game_duration')? $tournament->game_duration : old('game_duration') }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="point_win">Punkte für Gewinner</label>
-                        <input type="text" class="form-control" name="point_win" id="point_win"  value="{{ $exists && !old('point_win') ? $tournament->point_win : old('point_win') }}">
+                        <input type="text" required class="form-control" name="point_win" id="point_win"  value="{{ $exists && !old('point_win') ? $tournament->point_win : old('point_win') }}">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="point_draw">Punkte für Unentschieden</label>
-                        <input type="text" class="form-control" name="point_draw" id="point_draw"  value="{{ $exists && !old('point_draw') ? $tournament->point_draw : old('point_draw') }}">
+                        <input type="text" required class="form-control" name="point_draw" id="point_draw"  value="{{ $exists && !old('point_draw') ? $tournament->point_draw : old('point_draw') }}">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="point_lose">Punkte für Verlierer</label>
-                        <input type="text" class="form-control" name="point_lose" id="point_lose"  value="{{ $exists && !old('point_lose')? $tournament->point_lose : old('point_lose') }}">
+                        <input type="text" required class="form-control" name="point_lose" id="point_lose"  value="{{ $exists && !old('point_lose')? $tournament->point_lose : old('point_lose') }}">
                     </div>
                 </div>
             </div>

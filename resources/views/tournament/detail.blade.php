@@ -24,7 +24,9 @@
                     <div class="panel-body">
                         Erstelldatum: <i>{{ $tournament->created_at }}</i><br />
                         Änderungsdatum: <i>{{ $tournament->created_at }}</i><br />
-                        Startdatum: <i>{{ $tournament->start_date }}</i>
+                        Startdatum: <i>{{ $tournament->start_date }}</i><br />
+                        Spielzeit in Minuten: <i>{{ $tournament->game_duration }}</i><br />
+                        Pausenzeit in Minuten: <i>{{ $tournament->break_duration }}</i>
                     </div>
                 </div>
             </div>

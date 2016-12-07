@@ -25,6 +25,8 @@ class TournamentController extends Controller
             'point_win' => 'required|integer',
             'point_draw' => 'required|integer',
             'point_lose' => 'required|integer',
+            'game_duration' => 'required|integer',
+            'break_duration' => 'required|integer',
         ]);
 
         if(!$tournament) {

@@ -41,7 +41,7 @@
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $team->name : '' }}">
+                <input type="text" required autofocus class="form-control" id="name" placeholder="Name" name="name" value="{{ $exists ? $team->name : '' }}">
             </div>
 
             <button type="submit" class="btn btn-success">
