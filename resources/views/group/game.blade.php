@@ -58,7 +58,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="name">Start Offset</label>
+                                    <label for="name">Start Versatz (Minuten)</label>
                                     <input class="form-control" type="number" name="start_offset" required value="{{ $currentGame ? $currentGame->start_offset : 0 }}" />
                                 </div>
                             </div>
