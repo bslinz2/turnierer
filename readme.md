@@ -17,4 +17,6 @@ php artisan serve
 
 ![group](https://raw.githubusercontent.com/bslinz2/turnierer/master/screenshots/tournament.png "Turnier")
 
-![group](https://raw.githubusercontent.com/bslinz2/turnierer/master/screenshots/group.png "Gruppe")
+![group](https://raw.githubusercontent.com/bslinz2/turnierer/master/screenshots/group-0.png "Gruppe 1")
+
+![group](https://raw.githubusercontent.com/bslinz2/turnierer/master/screenshots/group-1.png "Gruppe 2")
