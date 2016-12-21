@@ -9,7 +9,7 @@ class CreateTournamentsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidweb
      */
     public function up()
     {

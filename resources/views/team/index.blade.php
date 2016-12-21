@@ -33,9 +33,13 @@
                             </a>
                         </td>
                         <td>
-                            <a href="/team/delete/{{ $team->id }}" class="btn btn-danger" role="button">
-                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                            </a>
+                            @if(true || count($team->groups) < 1 )
+                                <a href="/team/delete/{{ $team->id }}" class="btn btn-danger" role="button">
+                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                </a>
+                            @else
+                                Team ist in mindestens einer Gruppe.
+                            @endif
                         </td>
                     </tr>
                 @endforeach
