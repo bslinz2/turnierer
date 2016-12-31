@@ -19,6 +19,7 @@
         <?  $teams = $group->teams;
             $games = $group->games;
         ?>
+
         @foreach($group->games as $game)
             @if($game->team_result != null && $game->vs_team_result != null)
                 <? $game->points(); ?>

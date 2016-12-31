@@ -48,11 +48,12 @@ class GroupController extends Controller
     }
 
     public function detail(Group $group) {
+
         return View('group.detail', [
             'group' => $group,
             'addAbleTeams' => $this->allAddAbleTeams($group),
-            'teamSizes' => Game::teamSizes(),
-            'teamSchema' => Game::teamSchema(count($group->teams)),
+            'teamSizes' => Group::teamSizes(),
+            'teamSchema' => $group->schema,
         ]);
     }
 
@@ -72,6 +73,26 @@ class GroupController extends Controller
     public function removeTeam(Group $group, Team $team) {
         $group->teams()->detach($team->id);
         return redirect()->back();
+    }
+    
+    public function schema(Group $group) {
+        // dd($group->schema);
+        return View('group.schema', [
+            'group' => $group,
+        ]);
+    }
+    
+    public function updateSchema(Group $group) {
+        $schema = request()->get('schema');
+
+        foreach($schema as $key => $value) {
+            $schema[$key] = (int) $value;
+        }
+
+        $schema = array_chunk($schema, 2, false);
+        $group->schema = $schema;
+        $group->save();
+        return redirect('/group/detail/' . $group->id);
     }
 
     protected function allAddAbleTeams(Group $givenGroup) {
