@@ -16,6 +16,12 @@
             <li>Schema bearbeiten</li>
         </ol>
 
+        @if(count($group->games) > 0)
+            <div class="alert alert-warning">
+                <strong>Warnung!</strong> Es sind bereits Spiele eingetragen worden, deswegen ist es wichtig, dass die gespielten Spiele nicht mehr editiert werden!
+            </div>
+        @endif
+
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -29,17 +35,37 @@
         <form method="POST" action="/group/{{ $group->id }}/schema">
             {{ csrf_field() }}
 
+            <? $i = 1; ?>
+
             @foreach($group->schema as $schemaRow)
                 <div class="row">
-                    @foreach($schemaRow as $schemaCol)
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" required class="form-control" name="schema[]"
-                                       id="start_date" placeholder="{{ $schemaCol }}" value="{{ $schemaCol }}" />
-                            </div>
+                    <div class="col-md-1">
+                        Spiel {{ $i }}
+                    </div>
+                    <div class="col-md-1">
+                        Team
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" required class="form-control" name="schema[]"
+                                   id="start_date" placeholder="{{ $schemaRow[0] }}" value="{{ $schemaRow[0] }}" />
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-1">
+                        gegen
+                    </div>
+                    <div class="col-md-1">
+                        Team
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input type="text" required class="form-control" name="schema[]"
+                                   id="start_date" placeholder="{{ $schemaRow[1] }}" value="{{ $schemaRow[1] }}" />
+                        </div>
+                    </div>
                 </div>
+                <hr />
+                <? $i++; ?>
             @endforeach
 
 

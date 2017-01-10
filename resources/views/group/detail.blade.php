@@ -28,6 +28,7 @@
                 </div>
             </div>
         </div>
+
         <a href="/tournament/{{ $group->tournament->id }}/group/edit/{{ $group->id }}" class="btn btn-info" role="button">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Bearbeiten
         </a>
