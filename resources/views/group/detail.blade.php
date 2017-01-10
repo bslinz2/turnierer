@@ -28,10 +28,14 @@
                 </div>
             </div>
         </div>
+
         <a href="/tournament/{{ $group->tournament->id }}/group/edit/{{ $group->id }}" class="btn btn-info" role="button">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Bearbeiten
         </a>
 
+        <a href="/group/{{ $group->id }}/schema/" class="btn btn-info" role="button">
+            <span class="glyphicon glyphicon-th" aria-hidden="true"></span> Schema bearbeiten
+        </a>
         @include('group.game')
 
         @include('group.table')

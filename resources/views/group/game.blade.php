@@ -20,6 +20,7 @@
             </tr>
         </thead>
         <tbody>
+
         @for($i = 0; $i < count($teamSchema); $i++)
             <?  $team = $group->teams->get($teamSchema[$i][0] -1);
             $vsTeam = $group->teams->get($teamSchema[$i][1] -1);

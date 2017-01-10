@@ -40,14 +40,19 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/tournament/{tournament}/group/edit/{group?}', 'GroupController@edit');
     Route::post('/tournament/{tournament?}/group/edit/{group?}', 'GroupController@updateInsert');
 
+
     Route::get('/group/delete/{group}', 'GroupController@delete');
     Route::get('/group/detail/{group}', 'GroupController@detail');
+
+    Route::get('/group/{group}/schema', 'GroupController@schema');
+    Route::post('/group/{group}/schema', 'GroupController@updateSchema');
 
     Route::get('/group/{group}/add-team/{team}', 'GroupController@addTeam');
     Route::get('/group/{group}/remove-team/{team}', 'GroupController@removeTeam');
 
     Route::get('/game/group/{group}/team/{team}/vs-team/{vsTeam}/team-result/{teamResult}/vs-team-result/{vsTeamResult}/start-offset/{startOffset}', 'GameController@edit');
 
+    
     Route::get('/teams', 'TeamController@index');
     Route::get('/team/edit/{team?}', 'TeamController@edit');
     Route::post('/team/edit/{team?}', 'TeamController@updateInsert');
