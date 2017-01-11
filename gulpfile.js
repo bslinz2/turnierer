@@ -1,3 +1,7 @@
+if (process.argv[2] == '--production') {
+    process.env.DISABLE_NOTIFIER = true;
+}
+
 const elixir = require('laravel-elixir');
 
 /*
