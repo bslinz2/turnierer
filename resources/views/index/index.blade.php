@@ -6,7 +6,7 @@
         <div class="jumbotron">
             <div class="container">
                 <h1>Turnierer</h1>
-                <p>Tuniere einfach managen.</p>
+                <p>Turniere einfach managen.</p>
             </div>
         </div>
 
