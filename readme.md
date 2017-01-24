@@ -1,6 +1,14 @@
 # Turnierer - Turniere einfach managen. 
 
-## Installation
+## Installation (0815 User)
+```
+turnierer.zip herunterladen/entpacken
+turnierer.sql in Datenbank migrieren
+Inhalt auf Webserver hochladen
+Das öffentliche Verzeichnis MUSS auf den public/ Ordner zeiegen
+Fertig!
+```
+## Installation (Entwickler)
 
 ```
 composer install
